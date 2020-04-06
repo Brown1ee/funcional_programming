@@ -1,9 +1,10 @@
 const compose = (...args) => {
   return (arr) => {
+    let newArr = [...arr];
     args.map((fn) => {
-      arr = arr.map((item) => fn(item));
+      newArr = newArr.map((item) => fn(item));
     });
-    return arr;
+    return newArr;
   };
 };
 console.log(

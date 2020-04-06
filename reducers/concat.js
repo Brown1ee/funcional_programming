@@ -1,14 +1,16 @@
 const array1 = ["a", "b", "c"];
-const array2 = ["d", "e", "f"];
+const array2 = ["dsf", "sd"];
 
-let concat = (arr1, arr2) => {
-  return arr2.reduce(
-    (total, amount) => {
-      total.push(amount);
-      return total;
-    },
-    [...arr1]
-  );
+let concat = (...args) => {
+  return args.reduce((total, amount) => {
+    if (typeof amount == "object") {
+      total = [...total, ...amount];
+    } else {
+      total[total.length] = amount;
+    }
+
+    return total;
+  }, []);
 };
 
 console.log(concat(array1, array2));
