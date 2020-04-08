@@ -1,9 +1,8 @@
-const reverseArr = [1, 2, 3, 4, 5];
+const reverseArr = [1, 2, 3, 4, 5,6,7,8,9,0];
 
 const reverse = (arr) => {
-  return arr.reduce((acc, elem, index, arr) => {
-    let newArr = [...acc, arr.length - index];
-    return newArr;
+  return arr.reduce((acc, elem, index) => {
+    return [...acc, arr[arr.length-index-1]];
   }, []);
 };
 

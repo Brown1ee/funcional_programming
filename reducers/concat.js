@@ -1,9 +1,9 @@
 const array1 = ["a", "b", "c"];
-const array2 = ["dsf", "sd"];
+const array2 = "sdf";
 
 let concat = (...args) => {
   return args.reduce((total, amount) => {
-    if (typeof amount == "object") {
+    if (Array.isArray(amount)) {
       total = [...total, ...amount];
     } else {
       total[total.length] = amount;

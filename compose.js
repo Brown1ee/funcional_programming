@@ -1,11 +1,8 @@
 const compose = (...args) => {
-  return (arr) => {
-    let newArr = [...arr];
-    args.map((fn) => {
-      newArr = newArr.map((item) => fn(item));
-    });
-    return newArr;
-  };
+  return (arr) =>
+    args.reduce((acc, item) => {
+      return acc.reduce((acc,elem)=>{ return [...acc,item(elem)]; },[])
+    },[...arr]);
 };
 console.log(
   compose(
