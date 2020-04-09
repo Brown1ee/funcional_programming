@@ -1,15 +1,13 @@
 const array1 = ["a", "b", "c"];
-const array2 = "sdf";
+const array2 = "afgg";
 
 let concat = (...args) => {
   return args.reduce((total, amount) => {
     if (Array.isArray(amount)) {
-      total = [...total, ...amount];
+      return [...total, ...amount];
     } else {
-      total[total.length] = amount;
+      return [...total,amount]
     }
-
-    return total;
   }, []);
 };
 
